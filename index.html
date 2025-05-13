@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vale do Ribeira - Preservação Ambiental</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Vale do Ribeira</h1>
+            <p>Preservando nossas nascentes e rios</p>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#mapa">Mapa Interativo</a></li>
+                    <li><a href="#acoes">Ações Coletivas</a></li>
+                    <li><a href="#ranking">Ranking</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre" class="hero">
+        <div class="container">
+            <h2>Proteja o Vale do Ribeira</h2>
+            <p>Junte-se à comunidade para preservar as nascentes e rios da região. Faça parte da mudança!</p>
+            <a href="#mapa" class="btn">Explorar Mapa</a>
+        </div>
+    </section>
+
+    <section id="educacao" class="container">
+        <h2>Educação Ambiental</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Artigos e Vídeos</h3>
+                <p>Aprenda sobre a importância das nascentes e rios com conteúdos educativos.</p>
+            </div>
+            <div class="card">
+                <a href="quiz.html"><h3>Quizzes Interativos</h3></a>
+                <p>Teste seus conhecimentos e ganhe pontos para subir no ranking.</p>
+            </div>
+            <div class="card">
+                <h3>Infográficos</h3>
+                <p>Visualize dados importantes sobre a preservação dos recursos hídricos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapa" class="mapa">
+        <div class="container">
+            <h2>Mapa Interativo</h2>
+            <p>Explore as áreas de nascentes, rios e regiões degradadas. Reporte problemas ambientais diretamente no mapa.</p>
+            <div class="mapa-placeholder">
+                <!-- Espaço para integração com API de mapas (Google Maps, OpenStreetMap, etc.) -->
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d390889.2155729888!2d-47.82638950454793!3d-24.463728515909313!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1742411476253!5m2!1spt-BR!2sbr" width="100%00" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="acoes" class="acoes">
+        <div class="container">
+            <h2>Ações Coletivas</h2>
+            <p>Participe de mutirões de limpeza, campanhas de reflorestamento e outras atividades.</p>
+            <div class="campanhas">
+                <div class="campanha">
+                    <h3>Mutirão de Limpeza</h3>
+                    <p>Dia 25/10 - Rio Ribeira</p>
+                    <a href="#modal" class="btn1">Inscreva-se</a>
+                </div>
+                <div class="campanha">
+                    <h3>Plantio de Árvores</h3>
+                    <p>Dia 30/10 - Nascente do Rio X</p>
+                    <a href="#modal" class="btn2">Inscreva-se</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ranking" class="ranking">
+        <div class="container">
+            <h2>Ranking de Engajamento</h2>
+            <p>Veja quem está contribuindo mais para a preservação do Vale do Ribeira.</p>
+            <ol>
+                <li>João Silva - 1200 pontos</li>
+                <li>Maria Oliveira - 950 pontos</li>
+                <li>Carlos Souza - 800 pontos</li>
+            </ol>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Inscrição</h2>
+            <form action="">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone"><br>
+                <input type="submit" value="Inscrever-se">
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Vale do Ribeira - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
