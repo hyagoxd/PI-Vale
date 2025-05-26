@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzes - Vale do Ribeira</title>
-    <meta name="description" content="Teste seus conhecimentos sobre o Vale do Ribeira">
+    <title>Ecologia do Vale - Quiz | Vale do Ribeira</title>
+    <meta name="description" content="Teste seus conhecimentos sobre a ecologia do Vale do Ribeira">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style2.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/quiz.css">
 </head>
 <body>
     <!-- Cursor Personalizado -->
@@ -25,10 +25,10 @@
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html#sobre" data-hover="Conheça">Sobre</a></li>
-                    <li><a href="index.html#educacao" data-hover="Aprenda">Educação</a></li>
-                    <li><a href="index.html#mapa" data-hover="Explore">Mapa</a></li>
-                    <li><a href="index.html#acoes" data-hover="Participe">Ações</a></li>
+                    <li><a href="./index.html#sobre">Sobre</a></li>
+                    <li><a href="./index.html#educacao">Educação</a></li>
+                    <li><a href="./index.html#mapa">Mapa</a></li>
+                    <li><a href="./index.html#acoes">Ações</a></li>
                 </ul>
             </nav>
             
@@ -46,58 +46,50 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="quiz-main">
+    <!-- Quiz Container -->
+    <main class="quiz-container">
         <div class="container">
             <div class="quiz-header">
-                <h2>Quizzes Interativos</h2>
-                <p>Teste seus conhecimentos sobre o Vale do Ribeira e ganhe pontos no ranking!</p>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                    <span id="progress-text">1/10</span>
+                </div>
+                <h2>Preservação Hídrica</h2>
+                <p>Teste seus conhecimentos sobre as nascentes e rios do Vale do Ribeira.</p>
             </div>
             
-            <div class="quiz-grid">
-                <div class="quiz-card">
-                    <div class="quiz-image" style="background-image: url('assets/img/quiz1.jpg');">
-                        <div class="quiz-difficulty" data-difficulty="Fácil">Fácil</div>
-                    </div>
-                    <div class="quiz-content">
-                        <h3>Ecologia do Vale</h3>
-                        <p>Conhecimentos básicos sobre a fauna e flora da região.</p>
-                        <div class="quiz-meta">
-                            <span><i class="fas fa-question"></i> 10 perguntas</span>
-                            <span><i class="fas fa-star"></i> 100 pontos</span>
-                        </div>
-                        <a href="./quiz1.html" class="quiz-btn">Iniciar Quiz <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="quiz-content">
+                <div class="quiz-question" id="question-container">
+                    <h3 id="question-text"></h3>
                 </div>
                 
-                <div class="quiz-card">
-                    <div class="quiz-image" style="background-image: url('assets/img/quiz2.jpg');">
-                        <div class="quiz-difficulty" data-difficulty="Médio">Médio</div>
-                    </div>
-                    <div class="quiz-content">
-                        <h3>Preservação Hídrica</h3>
-                        <p>Teste sobre as nascentes e rios do Vale do Ribeira.</p>
-                        <div class="quiz-meta">
-                            <span><i class="fas fa-question"></i> 15 perguntas</span>
-                            <span><i class="fas fa-star"></i> 200 pontos</span>
-                        </div>
-                        <a href="./quiz2.html" class="quiz-btn">Iniciar Quiz <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="quiz-options" id="options-container">
+                    <!-- Options will be inserted by JavaScript -->
                 </div>
                 
-                <div class="quiz-card">
-                    <div class="quiz-image" style="background-image: url('assets/img/quiz3.jpg');">
-                        <div class="quiz-difficulty" data-difficulty="Difícil">Difícil</div>
+                <div class="quiz-feedback" id="feedback-container">
+                    <div class="feedback-content" id="feedback-text"></div>
+                    <button class="btn-primary" id="next-btn">Próxima Pergunta</button>
+                </div>
+            </div>
+            
+            <div class="quiz-results" id="results-container">
+                <h3>Resultado do Quiz</h3>
+                <div class="score-container">
+                    <div class="score-circle">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring-circle" stroke="var(--primary)" stroke-width="10" fill="transparent" r="90" cx="100" cy="100"/>
+                        </svg>
+                        <span class="score-percent" id="score-percent">0%</span>
                     </div>
-                    <div class="quiz-content">
-                        <h3>Desafio Ambiental</h3>
-                        <p>Questões avançadas sobre conservação e sustentabilidade.</p>
-                        <div class="quiz-meta">
-                            <span><i class="fas fa-question"></i> 20 perguntas</span>
-                            <span><i class="fas fa-star"></i> 300 pontos</span>
-                        </div>
-                        <a href="./quiz3.html" class="quiz-btn">Iniciar Quiz <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <p>Você acertou <span id="score-correct">0</span> de <span id="score-total">15</span> perguntas!</p>
+                </div>
+                <div class="result-message" id="result-message"></div>
+                <div class="quiz-actions">
+                    <button class="btn-secondary" id="restart-btn">Refazer Quiz</button>
+                    <a href="quiz.html" class="btn-primary">Ver outros quizzes</a>
                 </div>
             </div>
         </div>
@@ -133,9 +125,9 @@
                 <div class="links-group">
                     <h4>Quizzes</h4>
                     <ul>
-                        <li><a href="./quiz1.html">Ecologia do Vale</a></li>
-                        <li><a href="./quiz2.html">Preservação Hídrica</a></li>
-                        <li><a href="./quiz3.html">Desafio Ambiental</a></li>
+                        <li><a href="quiz1.html">Ecologia do Vale</a></li>
+                        <li><a href="quiz2.html">Preservação Hídrica</a></li>
+                        <li><a href="quiz3.html">Desafio Ambiental</a></li>
                     </ul>
                 </div>
 
@@ -160,6 +152,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/quiz3.js"></script>
 </body>
 </html>
